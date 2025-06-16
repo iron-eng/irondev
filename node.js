@@ -205,7 +205,7 @@ app.post("/uploads", upload.fields([{ name:"cover"}, { name:"apk"}, { name:"zip"
     else {
         gamefiledata = '<!DOCTYPE html><html lang = "en" xmlns = "http://www.w3.org/1999/xhtml"><head><meta charset="utf-8" /><link rel="stylesheet" href="/stylesheats/gamepage.css"/><title>WelCome-To-IronDev</title></head><body><header><nav class="navbar flex_row m_flex_row" ><div id="u" class="namecard u">' + req.body.title + '</div><div id="nc" class="namecontainer flex_row m_flex_colomb n"><div class="iron"><b>IRON</b></div><div class="dev">DEV</div></div><div id="o" class="namecard o">Owned by:<br />Hamza Ahmad</div></nav></header><main ><article id="d" class="download_box flex_colomb m_flex_colomb d"><div class="ic flex_row m_flex_row"><div class=" titlec m_flex_colomb flex_row"><p class="gtitle">' + req.body.title + '</p><p class="gtag">' + req.body.tagline + '</p></div><img src="uploaded_files/' + req.files.cover[0].filename + '" class="gimg" /></div><div class="download_button flex_row m_flex_row"><a href="uploaded_files/' + req.files.apk[0].filename + '" download>DOWNLOAD FOR mobile</a></div></article><div id="sss" class="screenshortsection d"><h1 class="screenshot_heading">ScreenShorts</h1><article id="st" class="screenshots flex_row m_flex_colomb"> <img class="st" src="background.jpg" /></article></div><div class="about"><h1 class="screenshot_heading">About this game</h1><article class="pcontainer"><p>' + req.body.description + '</p></article></div></main><script src="/javascips/gamepage.js"></script></body></html>'
     }
-    fs.writeFileSync(req.body.title+'.html',gamefiledata)
+    
    
   
     game_data.create({
