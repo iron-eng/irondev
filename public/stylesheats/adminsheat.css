@@ -1,0 +1,49 @@
+﻿body {
+    background-image: linear-gradient(to left,#c000ff,white,#c000ff)
+}
+.icontainer {
+    background-color:#ffffff;
+    text-align:center;
+    width:500px;
+    margin:auto;
+    margin-top:10px;
+    padding:20px;
+    border-radius:100px;
+    box-shadow:#ff00ce 0px 0px 100px;
+}
+.ititle{
+    font-size:50px;
+}
+.idownload{
+    font-size:30px;
+}
+.flex_colomb{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+.flex_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+.upload_form{
+    border:10px solid wheat;
+    width:60vw;
+    margin:auto;
+    margin-top:10px;
+    border-radius:200px;
+    backdrop-filter:blur(20px;);
+}
+input {
+    width: 300px;
+    background-image: linear-gradient(to right,#ff0083,#df00ff);
+    color: white;
+    border-radius: 5px;
+}
+label{
+    font-size:30px;  
+}

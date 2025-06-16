@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="stylesheats/adminsheat.css"/>
+    <title>Admin-Room</title>
+</head>
+<body>
+    <header id="cc">
+    </header>
+    <script src="javascrips/adminscript.js"></script>
+    <form action="/uploads" method="post" class="upload_form flex_colomb" enctype="multipart/form-data">
+        <label>Describe Title of Your Game</label>
+        <div class="flex_colomb">
+            <input type="text" name="title" placeholder="Whats the title of your game" />
+            <input type="text" name="tagline" placeholder="Give your tag line" />
+        </div>
+        <label >Describe plateform on which you want to upload</label>
+         <div class="flex_colomb">
+             <div class="flex_row">Windows:<input type="checkbox" name="windows" /></div>
+             <div class="flex_row">Android:<input type="checkbox" name="android" /></div>
+         </div>
+        <label>Describe Your Game</label>
+             <textarea name="description">Describe it</textarea>
+             <div class="flex_colomb">
+                 <label>Enter cover of your game</label>
+                 <input type="file" name="cover" />
+                 <label>Enter apk of your game</label>
+                 <input type="file" name="apk" />
+                 <label>Enter zip of your game</label>
+                 <input type="file" name="zip" />
+                 <label>Enter screenshorts of your game</label>
+                 <input type="file" name="s1" />
+                 <input type="file" name="s2" />
+                 <input type="file" name="s3" />
+                 <input type="file" name="s4" />
+                 <input type="file" name="s5" />
+             </div>
+        <div class="flex_colomb">
+            <label>Enter current downloads</label>
+            <input type="number" name="male_downloads"  placeholder="male"/>
+            <input type="number" name="female_downloads" placeholder="female"/>
+
+        </div>
+      
+        <input type="submit" value="Upload_game" />
+    </form>
+</body>
+</html>

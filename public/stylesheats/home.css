@@ -1,0 +1,190 @@
+﻿body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/*Designing title bar*/
+.navbar{
+    height:200px;
+    background-image:radial-gradient(circle,#232323,#000000);
+    margin:0px;
+    border-radius:0px 0px 100px 100px;
+}
+/*Designing iron for titlebar*/
+.iron{
+    color:lightyellow;
+    text-align:center;
+    font-size:150px;
+    width:300px;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+/*Designing dev for titlebar*/
+.dev {
+    color: wheat;
+    text-align: center;
+    font-size: 100px;
+    width: 300px;
+    position: relative;
+    cursor:default;
+   
+}
+/*Creating flex for landscape*/
+@media (orientation: landscape) {
+
+
+    /*Creating flex for rows*/
+    .flex_row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        cursor: default;
+    }
+}
+/*Stylig username card*/
+.namecard {
+    color: white;
+    background-image: linear-gradient(to right,#000000,#323232);
+    width: 350px;
+    font-size: 40px;
+    text-transform: capitalize;
+    padding: 30px 0px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: white -5px -5px 10px;
+    transition: transform 3s cubic-bezier(1,-0.04, 0.5, 1.03), opacity 3s cubic-bezier(1,-0.04, 0.5, 1.03);
+}
+/*Styling name container*/
+.namecontainer {
+    transition: opacity 3s linear;
+}
+/*Setting up initial positions of navbar objects to animate*/
+.n {
+    opacity:0;
+}
+.u{
+    transform:translateY(800px) translateX(800px);
+    opacity:0;
+}
+.o {
+    transform: translateY(800px) translateX(-800px);
+    opacity: 0;
+}
+.g {
+    
+  
+    transform:translateY(50px);
+    opacity:0;
+}
+/*styling gamescontainer*/
+.gcontainer {
+    height: 60vh;
+    width: 95vw;
+    border: 10px solid wheat;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 60px;
+    backdrop-filter: blur(10px);
+    overflow: auto;
+    scrollbar-color: #000000 #7a7a7a;
+    transition:opacity 3s linear, transform 3s linear;
+    display:flex;
+    align-items:center;
+  
+}
+
+
+/*Styling gamecard*/
+.gcard {
+    height: 90%;
+    width: 20%;
+    min-width: 20%;
+    margin: 10px;
+    background-image: linear-gradient(to top,#5a5a5a,#a7a7a7);
+    border-radius: 30px;
+}
+.cimg{
+    width:90%;
+    height:50%;
+    display:block;
+    margin:auto;
+    margin-top:15px;
+    border-radius:10px;
+}
+.ctitle{
+    text-align:center;
+    margin:auto;
+    margin-top:5px;
+    font-size:250%;
+    color:wheat;
+}
+.clink {
+    text-decoration: none;
+    display:block;
+    background-image: linear-gradient(to right,#ff0083,#df00ff);
+    color:aqua;
+    font-size:140%;
+    padding:5% 0px;
+    width:90%;
+    margin:auto;
+    text-align:center;
+    border-radius:30px;
+}
+.dp {
+    display: block;
+    width: 20%;
+}
+
+/*MAKING HOME PAGE RESPONSIVE*/
+@media (orientation:portrait){
+    /*Adding flex row for mobile*/
+    .m_flex_row{
+        display:flex;
+        gap:20px;
+        justify-content:center;
+        align-items: center;
+    }
+    /*Adding flex colomb for mobile*/
+    .m_flex_colomb {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    /*Adjusting navbar*/
+    .navbar{
+        height:300px;
+    }
+    /*Adjusting ownercard*/
+    .namecard{
+        width:250px;
+        font-size:25px;
+    }
+    .iron {
+        width: 400px;
+    }
+    /*adjusting games container*/
+    .gcontainer{
+        height:70vh;
+    }
+    /*adjusting game card*/
+    .gcard{
+        width:90%;
+        margin:auto;
+    }
+    /*Adjusting game link*/
+    .clink{
+        font-size:500%;
+    }
+    /*Adjusting game title*/
+    .ctitle{
+        font-size:500%;
+    }
+    
+
+    
+}

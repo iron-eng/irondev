@@ -1,0 +1,251 @@
+﻿body {
+    background-image: url("../images/background.jpg");
+    background-size: 100vw;
+  
+    margin: 0;
+    min-height: 100vh;
+    background-repeat:no-repeat;
+    
+}
+/*Designing title bar*/
+.navbar{
+    height:200px;
+    background-image:radial-gradient(circle,#232323,#000000);
+    margin:0px;
+    border-radius:0px 0px 100px 100px;
+}
+/*Designing iron for titlebar*/
+.iron{
+    color:lightyellow;
+    text-align:center;
+    font-size:150px;
+    width:300px;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+/*Designing dev for titlebar*/
+.dev {
+    color: wheat;
+    text-align: center;
+    font-size: 100px;
+    width: 300px;
+    position: relative;
+    cursor:default;
+   
+}
+/*Creating flex for landscape*/
+@media (orientation: landscape) {
+
+
+    /*Creating flex for rows*/
+    .flex_row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        cursor: default;
+    }
+    /*Creating flex for colomb*/
+    .flex_colomb {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        cursor: default;
+    }
+    /*Adding headings of screenshort margine for pc*/
+    .screenshot_heading{
+        margin-top:110px;
+    }
+    /*Adjusting screenshortsize for pc*/
+    .st {
+        height: 60vh;
+        min-height: 60vh;
+    }
+}
+/*Stylig username card*/
+.namecard {
+    color: white;
+    background-image: linear-gradient(to right,#000000,#323232);
+    width: 350px;
+    font-size: 40px;
+    text-transform: capitalize;
+    padding: 30px 0px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: white -5px -5px 10px;
+    transition: transform 3s cubic-bezier(1,-0.04, 0.5, 1.03), opacity 3s cubic-bezier(1,-0.04, 0.5, 1.03);
+}
+/*Styling name container*/
+.namecontainer {
+    transition: opacity 3s linear;
+}
+/*Setting up initial positions of navbar objects to animate*/
+.n {
+    opacity:0;
+}
+.u{
+    transform:translateY(800px) translateX(800px);
+    opacity:0;
+}
+.o {
+    transform: translateY(800px) translateX(-800px);
+    opacity: 0;
+}
+/*Setting ip initlial possition of download section*/
+.d{
+    opacity:0;
+    transform:translateY(800px);
+}
+/*Styling game downloadcard*/
+.download_box {
+    height: 55vh;
+    width: 90%;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(2px);
+    box-shadow: rgba(255,255,255,0.7) 0 0 20px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    transition: transform 3s cubic-bezier(1,-0.04, 0.5, 1.03), opacity 3s cubic-bezier(1,-0.04, 0.5, 1.03);
+}
+.ic{
+    
+    gap:20vw;
+}
+/*Styling title container*/
+.titlec{
+    gap:1vh;
+}
+/*styling title*/
+.gtitle{
+    background-image:linear-gradient(to left,#f800ff,#0015ff);
+    display:block;
+    padding:10px;
+    border-radius:100px;
+    text-align:center;
+    font-size:300%;
+}
+/*Stylig gamecard*/
+.gtag{
+    color:white;
+    font-size:200%;
+}
+/*Styling image*/
+.gimg{
+    border-radius:30px;
+    width:20%;
+}
+/*Styling anchor tag*/
+a{
+    color:wheat;
+    display:block;
+    text-decoration:none;
+    background-image:linear-gradient(to left,#1dff00,#ff0000);
+    padding:20px;
+    width:30vw;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:rgba(255,255,255,1) 0 0 10px;
+    font-size:200%;
+}
+/*Styling headings*/
+h1 {
+    margin: auto;
+    padding:20px;
+    text-align: center;
+    background-image: linear-gradient(to left,#0008ff,#ff0000,#0008ff);
+    width:30vw;
+    border-radius:50px;
+    color:wheat;
+}
+/*styling screenshort container*/
+.screenshots{
+    margin:auto;
+    margin-top:50px;
+    border:10px solid wheat;
+    height:70vh;
+    width:90vw;
+    backdrop-filter:blur(10px);
+    overflow:auto;
+    border-radius:50px;
+}
+/*Styling screenshort*/
+.st{
+   
+    display:block;
+    border:2px solid white;
+    border-radius:20px;
+    margin-left:10px;
+    margin-right:10px;
+}
+/*Styling paragraph container*/
+.pcontainer {
+    border: 10px solid black;
+    margin: auto;
+    margin-top: 80px;
+    width: 90vw;
+    padding: 20px;
+    border-radius: 20px;
+    background-image: linear-gradient(to left,#00ff0f,white,#00ff0f);
+    font-size:200%;
+}
+/*MAKING HOME PAGE RESPONSIVE*/
+@media (orientation:portrait) {
+    /*Adding flex row for mobile*/
+    .m_flex_row{
+        display:flex;
+        gap:20px;
+        justify-content:center;
+        align-items: center;
+    }
+    /*Adding flex colomb for mobile*/
+    .m_flex_colomb {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    /*Adjusting navbar*/
+    .navbar{
+        height:300px;
+    }
+    /*Adjusting ownercard*/
+    .namecard{
+        width:250px;
+        font-size:25px;
+    }
+    .iron {
+        width: 400px;
+    }
+    /*Adjusting download box*/
+    .download_box{
+        height:30vh;
+        width:95%;
+    }
+    /*adjusting ic*/
+    .ic{
+        gap:250px;
+    }
+    /*adjusting screenshortheading*/
+    .screenshot_heading{
+        margin-top:50px;
+    }
+    .screenshortsection {
+        height: 80vh;
+        margin-top: 0;
+   
+        transition: transform 3s ease-in-out, opacity 3s ease-in-out;
+    }
+    
+    .st{
+        width:90%;
+        min-width:90%;
+    }
+    .about{
+        background-color:black;
+        border:10px solid white;
+    }
+    
+}

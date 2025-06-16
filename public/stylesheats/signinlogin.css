@@ -1,0 +1,178 @@
+﻿/*Sets background in body*/
+body{
+    background-image:url("../images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    
+    margin:0;
+    min-height:100vh;
+    overflow:hidden;
+    
+}
+/*Setting flex of landscape orientation*/
+@media (orientation:landscape) {
+    /*This block sets a flex in direction of coloumb in css*/
+    .flex-columb {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /*This block sets a flex in direction of row in css*/
+
+    .flex-row {
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*Adding shrinking animation*/
+    @keyframes reducingsize {
+        from {
+            width: 500px;
+            height: 400px;
+        }
+
+        to {
+            width: 400px;
+            height: 300px;
+        }
+    }
+
+    .tsize {
+        animation: reducingsize;
+        animation-duration: 3s;
+        animation-fill-mode: forwards
+    }
+}
+/*This Section styles overall login and signin section*/
+.detailcontainer{
+    font-size:20px;
+    color:wheat;
+    backdrop-filter:blur(100px);
+    border:10px solid #beb76f;
+    margin:auto;
+    width:500px;
+    height:400px;
+    margin-top:150px;
+    border-radius:100px;
+}
+/*Styling option boxes */
+select{
+    background-color:#000000;
+    color:wheat;
+    padding:10px;
+    border-radius:20px;
+}
+/*Styling inputfields*/
+.input_field{
+    background-image:linear-gradient(to right,#ff0083,#df00ff);
+    color:white;
+    border-radius:5px;
+}
+/*Styling buttons*/
+.button{
+    padding:5px;
+    font-size:15px;
+    color:dimgray;
+    background-image:linear-gradient(to left,#00ff02,#ffd400);
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:dimgray 3px 3px 3px;
+   
+}
+    .button:hover {
+        background-image: linear-gradient(to left,#ffd400,#00ff02);
+    }
+    .button:active {
+        background-image: linear-gradient(to left,#00ff02,#ffd400);
+        box-shadow: dimgray 1px 1px 1px;
+    }
+/*Creating annimation to toggle between login and signin*/
+@keyframes togglinganimation{
+    0%{
+        transform:rotateX(0deg)
+    }
+    10%{
+        transform:rotateX(90deg)
+    }
+    100%{
+        transform:rotateX(0deg)
+    }
+}
+
+.toggleanimate {
+    animation: togglinganimation;
+    animation-duration: 5s;
+   
+    animation-fill-mode: forwards;
+}
+/*Styling error message*/
+.emailexist{
+    text-align:center;
+    text-transform:capitalize;
+    color:#a00404;
+    border: 3px solid red;
+    margin:auto;
+    width:200px;
+    position:relative;
+    top:100px;
+    padding:20px;
+    background-color:#b87070;
+    border-radius:50px;
+}
+/*Making it responsive*/
+@media (orientation:portrait){
+    /*Adjustng detail container*/
+    .detailcontainer {
+        margin-top: 500px;
+        width: 900px;
+        height: 1000px;
+        font-size:40px;
+        border-image-width:30px;
+    }
+    /*Adding flex-row for mobile*/
+    .m_flex_row{
+        display:flex;
+        gap:20px;
+        justify-content:center;
+        align-items:center;
+    }
+    /*Adding flex-colomb for mobile*/
+    .m_flex_colomb {
+        display: flex;
+        gap:20px;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    /*Adjusting inputfields size*/
+    .input_field{
+        width:700px;
+        height:50px;
+        font-size:40px;
+        border-radius:20px;
+        padding:5px;
+    }
+    /*adjusting select size*/
+    select{
+        width:600px;
+        height:100px;
+        font-size:30px;
+        text-align:center;
+        padding:20px;
+        border-radius:40px;
+    }
+    /*Adjusting button size*/
+    .button {
+        padding: 15px;
+        font-size: 45px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .tsize{
+        height:700px;
+    }
+
+    
+}

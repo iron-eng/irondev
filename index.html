@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="stylesheats/signinlogin.css"/>
+    <title>SignUp/Login</title>
+</head>
+<body>
+    
+    <main>
+        div>
+        <article id="a" class="detailcontainer flex-columb m_flex_colomb">
+
+            <div id="s">
+                <form method="post" action="/signin" class="flex-columb  m_flex_colomb">
+                    <button class="button" id="b">Go For Login</button>
+                    <div class="flex-row m_flex_colomb">
+                        <label for="fn">Enter first Name:</label>
+                        <input class="input_field" type="text" name="fname" id="fn" required />
+                    </div>
+                    <div class="flex-row m_flex_colomb">
+                        <label for="ln">Enter Last Name:</label>
+                        <input class="input_field" type="text" name="lname" id="ln" required />
+                    </div>
+                    <div class="flex-row m_flex_colomb">
+                        <label for="em">Enter Your Email:</label>
+                        <input class="input_field" type="email" name="email" id="em" required />
+                    </div>
+                    <div class="flex-row m_flex_colomb">
+                        <label for="pa">Enter Your Password:</label>
+                        <input class="input_field" type="password" name="password" id="pa" required />
+                    </div>
+                    <div class="flex-row m_flex_colomb">
+
+                        <select name="gender" id="gpa" required>
+                            <option value="">---Select Your Gender---</option>
+                            <option value="male">Male</option>
+                            <option value="female">FeMale</option>
+                        </select>
+                    </div>
+                    <input class="button" type="submit" value="SignIn" />
+                </form>
+            </div>
+            <div id="l" hidden>
+                <form method="post" action="/login" class="flex-columb login m_flex_colomb">
+                    <button class="button" id="lb">Go For SignIn</button>
+                    <div class="flex-row m_flex_colomb">
+                        <label for="lem">Enter Your Email:</label>
+                        <input class="input_field" type="email" name="email" id="lem" required />
+                    </div>
+                    <div class="flex-row m_flex_colomb">
+                        <label for="lpa">Enter Your Password:</label>
+                        <input class="input_field" type="password" name="password" id="lpa" required />
+                    </div>
+                    <input class="button" type="submit" value="LogIn" />
+                </form>
+            </div>
+        </article>
+    </main>
+    <script src="javascrips/Signinlogin.js"></script>
+</body>
+</html>
