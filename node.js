@@ -62,7 +62,7 @@ app.post("/gdata", async (req, res) => {
 //creates basic middlewheres
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-app.use(express.static("public"))
+app.use(express.static(__dirname +"/public"))
 
 //sends login and signup form on browser
 app.get("/", (req, res) => {
