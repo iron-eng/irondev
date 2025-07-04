@@ -20,11 +20,17 @@ let storage = m.diskStorage({
     }
 })
 let upload = m({ storage: storage })
-
+//requiring cloudinary
+const cloudinary = require('cloudinary');
+cloudinary.config({
+    cloud_name: "dteqtlhu4",
+    api_key:"925379643181887",
+    api_secret:"L6VtJOSMpNAhzmdIR5LFXKGAZ9Y"
+})
 
 //connects to mongodb server and require mongodb packages
 let mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://himlands786:covide19@cluster0.imzniu6.mongodb.net/irondev")
+mongoose.connect("mongodb+srv://himlands786:covide19@cluster0.ibk6maw.mongodb.net/irondev")
 let user_data = require("./database_modules/users.js");
 let game_data= require("./database_modules/gamedata.js")
 //creating routes to files
@@ -62,7 +68,7 @@ app.post("/gdata", async (req, res) => {
 //creates basic middlewheres
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-app.use(express.static(__dirname +"/public"))
+app.use(express.static("public"))
 
 //sends login and signup form on browser
 app.get("/", (req, res) => {
@@ -179,7 +185,7 @@ app.get("/admin", isadmin,(req, res) => {
 })
 //getting game information from /uploads
 
-app.post("/uploads", upload.fields([{ name:"cover"}, { name:"apk"}, { name:"zip"}, { name:"s1"}, { name:"s2"}, { name:"s3"}, { name:"s4"}, { name:"s5"} ]), async (req, res) => {
+app.post("/uploads", upload.fields([{ name:"cover"}, { name:"s1"}, { name:"s2"}, { name:"s3"}, { name:"s4"}, { name:"s5"} ]), async (req, res) => {
     let window_device;
     let gamefiledata;
     if (req.body?.windows === 'on') {
@@ -195,33 +201,32 @@ app.post("/uploads", upload.fields([{ name:"cover"}, { name:"apk"}, { name:"zip"
     else {
         android_device = false;
     }
-    if (window_device == true && android_device == true) {
-        gamefiledata = '<!DOCTYPE html><html lang = "en" xmlns = "http://www.w3.org/1999/xhtml"><head><meta charset="utf-8" /><link rel="stylesheet" href="/stylesheats/gamepage.css"/><title>WelCome-To-IronDev</title></head><body><header><nav class="navbar flex_row m_flex_row" ><div id="u" class="namecard u">' + req.body.title + '</div><div id="nc" class="namecontainer flex_row m_flex_colomb n"><div class="iron"><b>IRON</b></div><div class="dev">DEV</div></div><div id="o" class="namecard o">Owned by:<br />Hamza Ahmad</div></nav></header><main ><article id="d" class="download_box flex_colomb m_flex_colomb d"><div class="ic flex_row m_flex_row"><div class=" titlec m_flex_colomb flex_row"><p class="gtitle">' + req.body.title + '</p><p class="gtag">' + req.body.tagline + '</p></div><img src="uploaded_files/' + req.files.cover[0].filename + '" class="gimg" /></div><div class="download_button flex_row m_flex_row"><a href="uploaded_files/' + req.files.zip[0].filename + '" download>DOWNLOAD FOR PC</a><a href="uploaded_files/' + req.files.apk[0].filename + '" download>DOWNLOAD FOR mobile</a></div></article><div id="sss" class="screenshortsection d"><h1 class="screenshot_heading">ScreenShorts</h1><article id="st" class="screenshots flex_row m_flex_colomb"> <img class="st" src="background.jpg" /></article></div><div class="about"><h1 class="screenshot_heading">About this game</h1><article class="pcontainer"><p>' + req.body.description + '</p></article></div></main><script src="/javascips/gamepage.js"></script></body></html>'
-
-    }
-    else if (window_device == true && android_device == true) {
-        gamefiledata = '<!DOCTYPE html><html lang = "en" xmlns = "http://www.w3.org/1999/xhtml"><head><meta charset="utf-8" /><link rel="stylesheet" href="/stylesheats/gamepage.css"/><title>WelCome-To-IronDev</title></head><body><header><nav class="navbar flex_row m_flex_row" ><div id="u" class="namecard u">' + req.body.title + '</div><div id="nc" class="namecontainer flex_row m_flex_colomb n"><div class="iron"><b>IRON</b></div><div class="dev">DEV</div></div><div id="o" class="namecard o">Owned by:<br />Hamza Ahmad</div></nav></header><main ><article id="d" class="download_box flex_colomb m_flex_colomb d"><div class="ic flex_row m_flex_row"><div class=" titlec m_flex_colomb flex_row"><p class="gtitle">' + req.body.title + '</p><p class="gtag">' + req.body.tagline + '</p></div><img src="uploaded_files/' + req.files.cover[0].filename + '" class="gimg" /></div><div class="download_button flex_row m_flex_row"><a href="uploaded_files/' + req.files.zip[0].filename + '" download>DOWNLOAD FOR PC</a></div></article><div id="sss" class="screenshortsection d"><h1 class="screenshot_heading">ScreenShorts</h1><article id="st" class="screenshots flex_row m_flex_colomb"> <img class="st" src="background.jpg" /></article></div><div class="about"><h1 class="screenshot_heading">About this game</h1><article class="pcontainer"><p>' + req.body.description + '</p></article></div></main><script src="/javascips/gamepage.js"></script></body></html>'
-    }
-    else {
-        gamefiledata = '<!DOCTYPE html><html lang = "en" xmlns = "http://www.w3.org/1999/xhtml"><head><meta charset="utf-8" /><link rel="stylesheet" href="/stylesheats/gamepage.css"/><title>WelCome-To-IronDev</title></head><body><header><nav class="navbar flex_row m_flex_row" ><div id="u" class="namecard u">' + req.body.title + '</div><div id="nc" class="namecontainer flex_row m_flex_colomb n"><div class="iron"><b>IRON</b></div><div class="dev">DEV</div></div><div id="o" class="namecard o">Owned by:<br />Hamza Ahmad</div></nav></header><main ><article id="d" class="download_box flex_colomb m_flex_colomb d"><div class="ic flex_row m_flex_row"><div class=" titlec m_flex_colomb flex_row"><p class="gtitle">' + req.body.title + '</p><p class="gtag">' + req.body.tagline + '</p></div><img src="uploaded_files/' + req.files.cover[0].filename + '" class="gimg" /></div><div class="download_button flex_row m_flex_row"><a href="uploaded_files/' + req.files.apk[0].filename + '" download>DOWNLOAD FOR mobile</a></div></article><div id="sss" class="screenshortsection d"><h1 class="screenshot_heading">ScreenShorts</h1><article id="st" class="screenshots flex_row m_flex_colomb"> <img class="st" src="background.jpg" /></article></div><div class="about"><h1 class="screenshot_heading">About this game</h1><article class="pcontainer"><p>' + req.body.description + '</p></article></div></main><script src="/javascips/gamepage.js"></script></body></html>'
-    }
-    
-   
   
+    //fs.writeFileSync(req.body.title+'.html',gamefiledata)
+    let cover= await cloudinary.uploader.upload(req.files.cover[0].path);
+    let s1=await cloudinary.uploader.upload(req.files.s1[0].path);
+    let s2=await cloudinary.uploader.upload(req.files.s2[0].path);
+    let s3=await cloudinary.uploader.upload(req.files.s3[0].path);
+    let s4=await cloudinary.uploader.upload(req.files.s4[0].path);
+    let s5=await cloudinary.uploader.upload(req.files.s5[0].path);
+
+  
+
+    
     game_data.create({
         name: req.body.title,
         tag: req.body.tagline,
         android: android_device,
         window: window_device,
         discription: req.body.description,
-        cover: req.files.cover[0].filename,
-        apk: req.files.apk[0].filename,
-        Zip: req.files.zip[0].filename,
-        s1: req.files.s1[0].filename,
-        s2: req.files.s2[0].filename,
-        s3: req.files.s3[0].filename,
-        s4: req.files.s4[0].filename,
-        s5: req.files.s5[0].filename,
+        cover: cover.url,
+        apk: req.body.apk,
+        Zip: req.body.zip,
+        s1: s1.url,
+        s2: s2.url,
+        s3: s3.url,
+        s4: s4.url,
+        s5: s5.url,
         males: req.body.male_downloads,
         females: req.body.female_downloads
 
