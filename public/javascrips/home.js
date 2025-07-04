@@ -23,13 +23,13 @@ gamedata.then((value1) => {
     let carddets;
     for (let i = 0; i < card_number; i++) {
         if (value2[i].window == true && value2[i].android == true) {
-            carddets = '<div class="gcard"><img class="cimg" src="../uploaded_files/' + value2[i].cover + '" /><div class="device flex_row m_flex_row" ><img class="dp" src="../images/window.png" /><img class="dp" src="../images/android.png" /></div><div class="ctitle">' + value2[i].name + '</div><a id="ge" class="clink" href="/games/' + value2[i].name + '">Download</a></div>'
+            carddets = '<div class="gcard"><img class="cimg" src="' + value2[i].cover + '" /><div class="device flex_row m_flex_row" ><img class="dp" src="../images/window.png" /><img class="dp" src="../images/android.png" /></div><div class="ctitle">' + value2[i].name + '</div><a id="ge" class="clink" href="/games/' + value2[i].name + '">Download</a></div>'
         }
         else if (value2[i].window == true && value2[i].android == false) {
-            carddets = '<div class="gcard"><img class="cimg" src="../uploaded_files/' + value2[i].cover + '" /><div class="device flex_row m_flex_row" ><img class="dp" src="../images/window.png" /></div><div class="ctitle">' + value2[i].name + '</div><a id="ge" class="clink" href="/games/' + value2[i].name + '">Download</a></div>'
+            carddets = '<div class="gcard"><img class="cimg" src="' + value2[i].cover + '" /><div class="device flex_row m_flex_row" ><img class="dp" src="../images/window.png" /></div><div class="ctitle">' + value2[i].name + '</div><a id="ge" class="clink" href="/games/' + value2[i].name + '">Download</a></div>'
         }
         else {
-            carddets = '<div class="gcard"><img class="cimg" src="../uploaded_files/' + value2[i].cover + '" /><div class="device flex_row m_flex_row" ><img class="dp" src="../images/android.png" /></div><div class="ctitle">' + value2[i].name + '</div><a id="ge" class="clink" href="/games/' + value2[i].name + '">Download</a></div>'
+            carddets = '<div class="gcard"><img class="cimg" src="' + value2[i].cover + '" /><div class="device flex_row m_flex_row" ><img class="dp" src="../images/android.png" /></div><div class="ctitle">' + value2[i].name + '</div><a id="ge" class="clink" href="/games/' + value2[i].name + '">Download</a></div>'
         }
         
         cardcontainer.innerHTML = cardcontainer.innerHTML + carddets;
