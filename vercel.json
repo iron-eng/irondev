@@ -5,10 +5,6 @@
       "src": "node.js",
       "use": "@vercel/node",
       "config": { "includeFiles": [ "dist/**" ] }
-    },
-    {
-      "src":"public/**/*",
-      "use":"@vercel/static"
     }
   ],
   "routes": [
@@ -17,4 +13,3 @@
       "dest": "node.js"
     }
   ]
-}
